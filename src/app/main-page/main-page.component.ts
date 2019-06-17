@@ -6,12 +6,9 @@ import { AuthService } from '../services/auth.service';
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.css']
 })
-export class MainPageComponent implements OnInit {
+export class MainPageComponent {
   @Input() user;
 
   constructor(public auth: AuthService) { }
-
-  ngOnInit() {
-  }
 
 }
