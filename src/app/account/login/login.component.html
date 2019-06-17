@@ -1,0 +1,37 @@
+<div class="mt-5" *ngIf="auth.user$ | async as user; else login">
+  <div class="container">
+    <div class="">
+      {{user | json}}
+      <button class="btn btn-primary" (click)="auth.signOut()">Sign Out</button>
+    </div>
+  </div>
+
+</div>
+
+<ng-template #login>
+  <div class="container">
+    <div class="row">
+      <div class="mt-5" id="gSignInWrapper">
+        <span class="label">Sign in with:</span>
+        <div id="customBtn" class="customGPlusSignIn">
+          <span (click)="auth.googleSignIn()" class="icon fa fa-google google-icon ml-2"></span>
+          <span class="buttonText" (click)="auth.googleSignIn()">Google</span>
+        </div>
+      </div>
+      <div class="mt-5 ml-5" id="gSignInWrapper">
+        <span class="label">Sign in with:</span>
+        <div id="customBtn" class="customGPlusSignIn">
+          <span (click)="auth.facebookSignIn()" class="icon fa fa-facebook-square facebook-icon ml-2"></span>
+          <span class="buttonText" (click)="auth.facebookSignIn()">Facebook</span>
+        </div>
+      </div>
+      <div class="mt-5 ml-5" id="gSignInWrapper">
+        <span class="label">Sign in with:</span>
+        <div id="customBtn" class="customGPlusSignIn">
+          <span (click)="auth.twitterSignIn()" class="icon fa fa-twitter-square twitter-icon ml-2"></span>
+          <span class="buttonText" (click)="auth.twitterSignIn()">Twitter</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
