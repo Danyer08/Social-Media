@@ -38,7 +38,10 @@ export class AuthService {
   async facebookSignIn() {
     const provider = new auth.FacebookAuthProvider();
     await this.fireAuth.auth.signInWithPopup(provider).then(facebookCredential => {
+      console.log(facebookCredential);
       this.updateUserData(facebookCredential.user);
+    }).catch(error => {
+      alert(error);
     });
   }
 
@@ -46,6 +49,8 @@ export class AuthService {
     const provider = new auth.TwitterAuthProvider();
     await this.fireAuth.auth.signInWithPopup(provider).then(twitterCredential => {
       this.updateUserData(twitterCredential.user);
+    }).catch(error => {
+      alert(error);
     });
   }
 
