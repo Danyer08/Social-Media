@@ -45,7 +45,6 @@ export class AuthService {
   async twitterSignIn() {
     const provider = new auth.TwitterAuthProvider();
     await this.fireAuth.auth.signInWithPopup(provider).then(twitterCredential => {
-      console.log(twitterCredential);
       this.updateUserData(twitterCredential.user);
     });
   }

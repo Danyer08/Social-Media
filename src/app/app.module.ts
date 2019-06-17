@@ -2,13 +2,15 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { environment } from 'src/environments/environment';
 import { LoginComponent } from './account/login/login.component';
 import { AppComponent } from './app.component';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { MainPageComponent } from './main-page/main-page.component';
 
 const routes: Routes = [
   {
@@ -21,7 +23,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ const routes: Routes = [
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFontAwesomeModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
